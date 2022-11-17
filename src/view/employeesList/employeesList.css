@@ -1,0 +1,10 @@
+.main-employeesList {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.titleEmployeesList {
+    color: var(--green-1);
+    text-align: center;
+}
