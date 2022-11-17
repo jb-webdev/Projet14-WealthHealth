@@ -1,0 +1,67 @@
+.sucess {
+    border: 1px solid green;
+}
+.alert {
+    border: 1px solid red;
+}
+
+.modalcustom {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+
+.modalcustom-content {
+    padding: 5px;
+    width: 50%;
+    background-color: #fff;
+    line-height: 1.5;
+    font-size: 18px;
+    cursor: initial;
+    border-radius: 15px;
+    animation: fadeIn 0.6s ease-in-out;
+    
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-12rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== STYLE ICON ===== */
+.modalcustom-wrapper-icon {
+    display: flex;
+    justify-content: flex-end;
+}
+.modalcustom-wrapper-icon img{
+    width: 30px;
+    margin: 0;
+    position: relative;
+    top: -15px; left: 15px;
+    cursor: pointer;
+}
+.modalcustom-wrapper-icon img:hover{
+    transition: 0.9s;
+    transform: rotate(360deg);
+}
+
+
+/* ===== STYLE Message ===== */
+
+
+.modalcustom-message-form {
+    color: #313131;
+    text-align: center;
+}
