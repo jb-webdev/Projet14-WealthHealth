@@ -1,0 +1,41 @@
+table {
+    height: 40%;
+    left: 10%;
+    margin: 20px auto;
+    overflow-y: scroll;
+    position: static;
+    width: 100%;
+}
+
+thead th {
+    background: var(--green-2);
+    color: #000000;
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    font-weight: 200;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+tr {
+    background: #f4f7f8;
+    border-bottom: 1px solid #FFF;
+    margin-bottom: 5px;
+
+}
+
+th,
+td {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    padding: 20px;
+    text-align: left;
+    font-size: 18px;
+}
+
+td {
+    border-bottom: 2px solid var(--green-2);
+    padding: 10px;
+    text-align: center;
+}

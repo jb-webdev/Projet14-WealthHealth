@@ -1,0 +1,53 @@
+.filterTable-section {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* form select*/
+.filterTable-label {
+    margin-right: 10px;
+}
+
+.filterTable-select {
+    background-color: var(--green-2);
+    color: #ffffff;
+    border: none;
+    border-radius: 5px 5px 5px 5px;
+}
+
+/* form input research */
+.filterTable-research-input[type=text] {
+    padding: 9.5px;
+    font-size: 17px;
+    border: none;
+    float: left;
+    width: 400px;
+    background: #dad8d8b4;
+    border-radius: 5px 0px 0px 5px;
+    outline: none;
+}
+
+.filterTable-btn {
+    float: left;
+    width: 100px;
+    padding: 8px;
+    background: var(--green-2);
+    color: #ffffff;
+    font-size: 17px;
+    border: 1px solid var(--green-2);
+    border-radius: 0px 5px 5px 0px;
+    border-left: none;
+    cursor: pointer;
+}
+
+.filterTable-btn:hover {
+    background: var(--green-1);
+}
+
+.filterTable-research::after {
+    content: "";
+    clear: both;
+    display: table;
+}
