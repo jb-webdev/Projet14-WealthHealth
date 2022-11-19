@@ -1,22 +1,116 @@
 table {
-    font-family: Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-  }
-  
-  table td, table th {
-    border: 1px solid #ddd;
-    padding: 8px;
-  }
-  
-  table tr:nth-child(even){background-color: #cacaca;}
-  
-  table tr:hover {background-color: #ddd;}
-  
-  table th, tfoot td {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: center;
-    background-color: var(--green-2);
-    color: white;
-  }
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table td,
+table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+table tr:nth-child(even) {
+  background-color: #cacaca;
+}
+
+table tr:hover {
+  background-color: #ddd;
+}
+
+table th,
+tfoot td {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: var(--green-2);
+  color: white;
+}
+
+/* =========== */
+
+.wrapper-research-options {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.selectNbrPage{
+  background-color: var(--green-2);
+  border: none;
+  padding: 10px;
+  color: #ffffff;
+}
+
+/* Paginate Bottom */
+.wrapperPaginateBottom{
+  width: 70%;
+  margin-top: 20px;
+  margin-bottom: 35px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin-left: auto;
+  margin-right: auto;
+}
+.btn-nextFullPage,
+.btn-PreviousFullPage {
+  background-color: var(--green-2);
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  height: 50px;
+  cursor: pointer;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.btn-nextFullPage:disabled,
+.btn-PreviousFullPage:disabled{
+  color: var(--green-2);
+}
+
+.wrapperDisplayPageText{
+  margin-right: 20px;
+}
+
+.btn-previoustPage, 
+.btn-nextPage{
+  border: none;
+  border-radius: 5px;
+  background-color: var(--green-2);
+  color: #ffffff;
+  padding: 10px;
+  cursor: pointer;
+  height: 50px;
+  width: 90px;
+}
+.btn-previoustPage{
+  margin-right: 5px;
+}
+
+.btn-nextPage{
+  margin-left: 5px;
+}
+
+.btn-previoustPage:disabled, 
+.btn-nextPage:disabled{
+  color: var(--green-2);
+}
+.wrapperSpanPaginate{
+  width: 400px;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid var(--green-2);
+  padding-left: 30px;
+  padding-right: 30px;
+  border-radius: 5px;
+
+}
+.wrapperSpanPaginate p{
+  margin-right: 10px;
+}
