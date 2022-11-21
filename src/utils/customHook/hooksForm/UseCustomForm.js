@@ -31,6 +31,7 @@ const useCustomForm = () => {
         setValues({
             ...values,
             [name]: value
+            
         })
         dispatch(SubmitFormulaire(true))
     }
