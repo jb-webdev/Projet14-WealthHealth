@@ -41,6 +41,9 @@ Personnellement j'utilise vs-code sous linux (unbuntu)
 * react-redux : ^8.0.4
 * react-router-dom : ^6.4.2
 * react-scripts : 5.0.1
+* react-table: ^7.8.0,
+* redux: ^4.2.0,
+* styled-components: ^5.3.6,
 * redux : ^4.2.0
 
 

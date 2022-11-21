@@ -1,21 +1,19 @@
 import React from 'react'
-import "./navabr.css"
-import { NavLink, Link } from 'react-router-dom'
+import {Header, LinkStyled, HeaderLogo, HeaderText, WrapperNavLink, NavLinkStyled,} from './navabarStyle.js'
 import Logo from '../../assets/img/logo-v2.png'
 
 export default function Navbar() {
 
   return (
-
-    <header className="navigation">
-      <Link className="link-logo-nav" to='/'>
-        <img className='logo-navbar' src={Logo} alt="Logo hrnet" />
-        <p className='logoText'>HRnet</p>
-      </Link>
-      <div>
-        <NavLink className='link-navbar' to='/'>New employee</NavLink>
-        <NavLink className='link-navbar' to='/employees'>Employee list</NavLink>
-      </div>
-    </header>
+    <Header >
+      <LinkStyled to='/'>
+        <HeaderLogo src={Logo} alt="Logo hrnet" />
+        <HeaderText >HRnet</HeaderText>
+      </LinkStyled>
+      <WrapperNavLink>
+        <NavLinkStyled to='/'>New employee</NavLinkStyled>
+        <NavLinkStyled to='/employees' >Employee list</NavLinkStyled>
+      </WrapperNavLink>
+    </Header>
   )
 }

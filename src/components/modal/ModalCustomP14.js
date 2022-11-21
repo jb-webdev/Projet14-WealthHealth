@@ -1,22 +1,26 @@
 import React from 'react'
-import './modal.css'
 import close from './closeIcon2.png'
+import { Modal, ModalContent, ModalWrapperIcon, ModalImage, ModalMessage } from './styles'
 
-// Envoi du formulaire réussi !
 
-export default function ModalCustomP14({ message, closeModal }) {
-  const handleClick = () => {
-    closeModal()
-  }
+export default function ModalCustomP14({isOpen, message, closeModal}) {
+  
 
   return (
-    <div className='modalcustom sucess'>
-      <div className='modalcustom-content'>
-        <div className='modalcustom-wrapper-icon'>
-          <img src={close} alt="logo close" onClick={handleClick} />
-        </div>
-        <p className='modalcustom-message-form'>{message}</p>
-      </div>
-    </div>
+    <>
+    {isOpen ?
+      <Modal>
+        <ModalContent>
+          <ModalWrapperIcon>
+            <ModalImage src={close} alt="img close modal" onClick={closeModal} />
+          </ModalWrapperIcon>
+          <ModalMessage>{message}</ModalMessage>
+        </ModalContent>
+      </Modal>
+      :
+      
+      ""
+    }
+  </>
   )
 }
