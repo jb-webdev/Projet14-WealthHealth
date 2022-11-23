@@ -23,7 +23,7 @@ export  default function CreateEmployee () {
                 closeModal={closeModal}
                 message="Création du nouvel employé réussi !" 
                 messageColor="#93ad18" 
-                animation="right" 
+                animation="down" 
                 border="success"
             />
         </MainCreateEmployee>

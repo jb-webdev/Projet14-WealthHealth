@@ -6308,10 +6308,10 @@ mkdirp@~0.5.1:
   dependencies:
     minimist "^1.2.6"
 
-modal-custom-jb@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/modal-custom-jb/-/modal-custom-jb-1.0.2.tgz#2e156d1fddc31b0e7e13189fec67efe67ea172b2"
-  integrity sha512-zhQDOYzidWQCII5NoW9GKFoKvp4IFNOkqWUhDDS3psrzbg0xMk1hO1j+mMaXLjl9xTzs1eBS642TVVt7pyYM2Q==
+modal-custom-jb@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/modal-custom-jb/-/modal-custom-jb-1.0.3.tgz#27972a6dcac2c62bfb64110ce0472c987cd757d0"
+  integrity sha512-b9j5FPjl9/b3v3c0bKFKIst3b43T0ZoXispUfcA3d5kbKPW0fB6Lx3wxNr1eXj1QE9hm2AmvTcvYZ5+4MkNyyw==
   dependencies:
     styled-components "^5.3.6"
 
