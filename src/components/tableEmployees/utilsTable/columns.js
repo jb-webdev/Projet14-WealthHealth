@@ -37,6 +37,12 @@ export const COLUMNS = [
         Header: 'City',
         Footer: 'City',
         accessor: 'city',
+        
+    },
+    {
+        Header: 'State',
+        Footer: 'State',
+        accessor: 'state',
     },
     {
         Header: 'Zip code',
