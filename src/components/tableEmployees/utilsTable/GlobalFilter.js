@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { useAsyncDebounce } from 'react-table'
-import './GlobalFilter.css'
+import { ResearchInputText } from './GlobalFilterStyle'
 
-export const GlobalFilter = ({filter, setFilter}) => {
+export const GlobalFilter = ({ filter, setFilter }) => {
 
   const [value, setValue] = useState(filter)
 
@@ -12,10 +12,9 @@ export const GlobalFilter = ({filter, setFilter}) => {
   }, 500)
 
   return (
-    <span className='researchWrapper'>
-        Search: {' '}
-        <input 
-        className='researchInputText'
+    <span >
+      Search: {' '}
+      <ResearchInputText
         value={value || ''}
         onChange={(e) => {
           setValue(e.target.value)

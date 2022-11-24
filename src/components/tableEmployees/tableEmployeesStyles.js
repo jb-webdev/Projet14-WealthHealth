@@ -1,11 +1,8 @@
 import styled from "styled-components";
+import { colorTwo } from "../../GlobalStyle";
 
 
-// ===== Variable Style =====
-var colorTwo = '#93ad18'
-//var colorOne = '#5b7009'
-
-var btnStyleOne =` 
+var btnStyleOne = ` 
     background-color: ${colorTwo};
     color: #ffffff;
     border: none;
@@ -18,7 +15,7 @@ var btnStyleOne =`
         color: ${colorTwo}
     }
   `
-var btnStyleTwo=`
+var btnStyleTwo = `
     border: none;
     border-radius: 5px;
     background-color: ${colorTwo};
@@ -67,7 +64,7 @@ export const Th = styled.th`
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: center;
-    background-color: var(--green-2);
+    background-color: ${colorTwo};
     color: white;
 `
 export const Td = styled.td`
@@ -91,11 +88,11 @@ export const WrapperPaginateBottom = styled.div`
 export const BtnGoToStart = styled.button`
     ${btnStyleOne}
 `
-export const BtnPreviousPage =styled.button`
+export const BtnPreviousPage = styled.button`
     ${btnStyleTwo}
     margin-right: 5px;
 `
-export const BtnNextPage =styled.button`
+export const BtnNextPage = styled.button`
     ${btnStyleTwo}
     margin-left: 5px;
 `
@@ -111,12 +108,27 @@ export const WrapperSpanPaginate = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    border: 2px solid var(--green-2);
+    background-color: ${colorTwo};
+    
     padding-left: 30px;
     padding-right: 30px;
     border-radius: 5px;
 `
+
+
 export const TextPaginate = styled.p`
     margin-right: 10px;
+    color: #ffffff
+`
+export const SpanTextPaginate = styled.span`
+    font-weight : bolder;
+    margin-left : 5px;
 `
 
+export const LabelPaginate = styled.label`
+    color : #ffffff;
+`
+export const InputPaginate = styled.input`
+    border : none;
+   text-align: center; 
+`

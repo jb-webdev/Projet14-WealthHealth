@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { colorOne } from '../../GlobalStyle'
 
 export const MainCreateEmployee = styled.main`
     display: flex;
@@ -8,6 +9,6 @@ export const MainCreateEmployee = styled.main`
     padding-right: 15%;
 `
 export const MainCreateEmployeeTitle = styled.h1`
-    color: #5b7009;
+    color: ${colorOne};
     text-align: center;
 `

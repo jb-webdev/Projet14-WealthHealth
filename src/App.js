@@ -9,14 +9,14 @@ import { AddEmployee } from './utils/store/sliceEmployees/sliceEmployees.js'
 import MOCK_DATA from './assets/data/MOCK_DATA.json'
 
 function App() {
-  
+
   const dispatch = useDispatch()
   const employeesListStore = useSelector((state) => state.StoreState.employeesList)
 
-  if (employeesListStore.length === 0){
+  if (employeesListStore.length === 0) {
     dispatch(AddEmployee(MOCK_DATA))
   }
-  
+
   return (
     <div className="App">
       <Navbar />

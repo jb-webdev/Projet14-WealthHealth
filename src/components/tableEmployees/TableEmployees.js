@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react'
-import { WrapperFilter, SelectPages, Table, Tr, Th, Td, WrapperPaginateBottom, BtnGoToEnd, BtnGoToStart, BtnPreviousPage, BtnNextPage, WrapperSpanPaginate, TextPaginate } from './tableEmployeesStyles.js'
-import { RiArrowUpSFill, RiArrowDownSFill  } from 'react-icons/ri'
+import { WrapperFilter, SelectPages, Table, Tr, Th, Td, WrapperPaginateBottom, BtnGoToEnd, BtnGoToStart, BtnPreviousPage, BtnNextPage, WrapperSpanPaginate, TextPaginate, SpanTextPaginate, InputPaginate, LabelPaginate } from './tableEmployeesStyles.js'
+import { RiArrowUpSFill, RiArrowDownSFill } from 'react-icons/ri'
 import { useSelector } from 'react-redux'
 
 import { useTable, useGlobalFilter, usePagination, useSortBy } from 'react-table'
@@ -88,23 +88,20 @@ export default function TableEmployees() {
                         )
                     })}
                 </tbody>
-
-
             </Table>
             <WrapperPaginateBottom>
                 <BtnGoToEnd onClick={() => gotoPage(0)} disabled={!canPreviousPage} >{'<<'}</BtnGoToEnd>
                 <BtnPreviousPage onClick={() => previousPage()} disabled={!canPreviousPage} >Previous</BtnPreviousPage>
                 <WrapperSpanPaginate>
                     <TextPaginate>
-                        Page
-                        <strong>
+                        Page :
+                        <SpanTextPaginate>
                             {pageIndex + 1} of {pageOptions.length}
-                        </strong>
+                        </SpanTextPaginate>
                     </TextPaginate>
-
                     <span>
-                        <label> Go to page: </label>
-                        <input
+                        <LabelPaginate> Go to page: </LabelPaginate>
+                        <InputPaginate
                             type='number'
                             defaultValue={pageIndex + 1}
                             onChange={e => {
@@ -114,7 +111,6 @@ export default function TableEmployees() {
                             style={{ width: '50px' }}
                         />
                     </span>
-
                 </WrapperSpanPaginate>
                 <BtnNextPage onClick={() => nextPage()} disabled={!canNextPage} >Next</BtnNextPage>
                 <BtnGoToStart onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage} >{'>>'}</BtnGoToStart>

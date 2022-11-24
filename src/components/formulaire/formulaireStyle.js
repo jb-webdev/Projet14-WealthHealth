@@ -1,16 +1,16 @@
 import styled from 'styled-components'
-
+import { colorOne, colorTwo } from '../../GlobalStyle'
 
 export const FormCreateEmployee = styled.form`
 
 `
 export const Formfieldset = styled.fieldset`
-    border: 2px solid #5b7009;
+    border: 2px solid ${colorOne};
     margin-bottom: 20px;
 `
 
 export const FormLegend = styled.legend`
-    color: #5b7009;
+    color: ${colorOne};
     font-weight: bold;
 `
 export const FormWrapperInfo = styled.div`
@@ -25,17 +25,17 @@ export const FormWrapperInput = styled.div`
     margin-bottom: 15px;
 `
 export const FormLabel = styled.label`
-    color: #5b7009;
+    color: ${colorOne};
     margin-right: 10px;
 `
 export const FormInput = styled.input`
-    border: 1px solid #5b7009;
+    border: 1px solid ${colorOne};
     margin-bottom: 10px;
     border-radius: 5px;
 `
 export const FormSelect = styled.select`
-    background-color: #93ad18;
-    border: 2px solid #5b7009;
+    background-color: ${colorTwo};
+    border: 2px solid ${colorOne};
     border-radius: 5px;
 `
 
@@ -59,11 +59,11 @@ export const FormButton = styled.button`
     text-transform: uppercase;
     margin-right: 40px;
     cursor: pointer;
-    border: 2px solid #5b7009;
+    border: 2px solid ${colorOne};
     border-radius: 5px;
-    background-color: #93ad18;
+    background-color: ${colorTwo};
     &:hover {
-        background-color: #5b7009;
+        background-color: ${colorOne};
     }
 
 `

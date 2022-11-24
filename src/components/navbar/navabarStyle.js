@@ -1,14 +1,14 @@
 import styled from "styled-components";
 import { NavLink, Link } from 'react-router-dom'
+import { colorOne, colorTwo } from '../../GlobalStyle.js'
 
-//import {Header, LinkStyled, HeaderLogo, HeaderText, NavLinkStyled,} from './navabarStyle.js'
 export const Header = styled.header`
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     box-sizing: border-box;
-    background-color: #93ad18;
+    background-color: ${colorTwo};
     overflow: auto;
     position: relative;
     top: 0;
@@ -16,7 +16,7 @@ export const Header = styled.header`
     height: 80px;
     padding-left: 50px;
     z-index: 100;
-    border-bottom: 5px solid #5b7009;
+    border-bottom: 5px solid ${colorOne};
 `
 export const LinkStyled = styled(Link)`
     display: flex;
@@ -53,4 +53,3 @@ export const NavLinkStyled = styled(NavLink)`
       }
 }
 `
-

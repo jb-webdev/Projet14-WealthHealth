@@ -1,5 +1,5 @@
 import React from 'react'
-import { FormCreateEmployee,Formfieldset, FormLegend,FormWrapperInfo, FormWrapperInput, FormLabel,FormInput,FormSelect,FormWrapperButton,FormMessageError,FormButton, } from './formulaireStyle'
+import { FormCreateEmployee, Formfieldset, FormLegend, FormWrapperInfo, FormWrapperInput, FormLabel, FormInput, FormSelect, FormWrapperButton, FormMessageError, FormButton, } from './formulaireStyle'
 
 import dataSelectJodDepartment from '../../assets/data/dataJobDepartment.js'
 import dataState from '../../assets/data/dataState.js'
@@ -35,12 +35,12 @@ export default function Form() {
 
           <FormWrapperInfo>
             <FormWrapperInput>
-              <FormLabel  htmlFor="entryDate">Entry date</FormLabel >
+              <FormLabel htmlFor="entryDate">Entry date</FormLabel >
               <FormInput type="date" id="entryDate" name="entryDate" value={values.entryDate} onChange={handleChange} />
               {errors.entryDate && <FormMessageError>{errors.entryDate}</FormMessageError>}
             </FormWrapperInput>
             <FormWrapperInput>
-              <FormLabel  htmlFor="department">Department</FormLabel >
+              <FormLabel htmlFor="department">Department</FormLabel >
               <FormSelect
                 id="department"
                 name="department"
@@ -58,17 +58,17 @@ export default function Form() {
 
           <FormWrapperInfo>
             <FormWrapperInput>
-              <FormLabel  htmlFor="street">Street</FormLabel >
+              <FormLabel htmlFor="street">Street</FormLabel >
               <FormInput type="text" id="street" name="street" value={values.street} onChange={handleChange} />
               {errors.street && <FormMessageError>{errors.street}</FormMessageError>}
             </FormWrapperInput>
             <FormWrapperInput>
-              <FormLabel  htmlFor="city">City</FormLabel >
+              <FormLabel htmlFor="city">City</FormLabel >
               <FormInput type="text" id="city" name="city" value={values.city} onChange={handleChange} />
               {errors.city && <FormMessageError>{errors.city}</FormMessageError>}
             </FormWrapperInput>
             <FormWrapperInput>
-              <FormLabel  htmlFor="state">State</FormLabel >
+              <FormLabel htmlFor="state">State</FormLabel >
               <FormSelect
                 name="state"
                 id="state"
@@ -80,7 +80,7 @@ export default function Form() {
               {errors.state && <FormMessageError>{errors.state}</FormMessageError>}
             </FormWrapperInput>
             <FormWrapperInput>
-              <FormLabel  htmlFor="zipCode">Zip code</FormLabel >
+              <FormLabel htmlFor="zipCode">Zip code</FormLabel >
               <FormInput type="number" id="zipCode" name="zipCode" value={values.zipCode} onChange={handleChange} />
               {errors.zipCode && <FormMessageError>{errors.zipCode}</FormMessageError>}
             </FormWrapperInput>

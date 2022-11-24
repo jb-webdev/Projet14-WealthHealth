@@ -1,5 +1,5 @@
 import React from 'react'
-import {Header, LinkStyled, HeaderLogo, HeaderText, WrapperNavLink, NavLinkStyled,} from './navabarStyle.js'
+import { Header, LinkStyled, HeaderLogo, HeaderText, WrapperNavLink, NavLinkStyled, } from './navabarStyle.js'
 import Logo from '../../assets/img/logo-v2.png'
 
 export default function Navbar() {
