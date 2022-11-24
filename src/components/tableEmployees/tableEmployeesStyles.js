@@ -132,3 +132,7 @@ export const InputPaginate = styled.input`
     border : none;
    text-align: center; 
 `
+
+export const ErrorResearch = styled.p`
+    text-align: center;
+`

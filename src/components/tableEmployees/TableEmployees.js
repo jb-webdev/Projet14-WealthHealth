@@ -1,12 +1,11 @@
 import React, { useMemo } from 'react'
-import { WrapperFilter, SelectPages, Table, Tr, Th, Td, WrapperPaginateBottom, BtnGoToEnd, BtnGoToStart, BtnPreviousPage, BtnNextPage, WrapperSpanPaginate, TextPaginate, SpanTextPaginate, InputPaginate, LabelPaginate } from './tableEmployeesStyles.js'
+import { WrapperFilter, SelectPages, Table, Tr, Th, Td, WrapperPaginateBottom, BtnGoToEnd, BtnGoToStart, BtnPreviousPage, BtnNextPage, WrapperSpanPaginate, TextPaginate, SpanTextPaginate, InputPaginate, LabelPaginate, ErrorResearch } from './tableEmployeesStyles.js'
 import { RiArrowUpSFill, RiArrowDownSFill } from 'react-icons/ri'
 import { useSelector } from 'react-redux'
 
 import { useTable, useGlobalFilter, usePagination, useSortBy } from 'react-table'
 import { COLUMNS } from './utilsTable/columns.js'
 import { GlobalFilter } from './utilsTable/GlobalFilter.js'
-
 
 
 export default function TableEmployees() {
@@ -45,7 +44,6 @@ export default function TableEmployees() {
 
     const { globalFilter, pageIndex, pageSize } = state
 
-
     return (
         <>
             <WrapperFilter>
@@ -76,7 +74,6 @@ export default function TableEmployees() {
 
                 </thead>
                 <tbody {...getTableBodyProps()}>
-
                     {page.map((row) => {
                         prepareRow(row)
                         return (
@@ -89,6 +86,7 @@ export default function TableEmployees() {
                     })}
                 </tbody>
             </Table>
+            {!page.length ? <ErrorResearch>Oups ! je n'ai trouvé personne !</ErrorResearch> : ""}
             <WrapperPaginateBottom>
                 <BtnGoToEnd onClick={() => gotoPage(0)} disabled={!canPreviousPage} >{'<<'}</BtnGoToEnd>
                 <BtnPreviousPage onClick={() => previousPage()} disabled={!canPreviousPage} >Previous</BtnPreviousPage>
