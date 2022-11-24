@@ -12,23 +12,22 @@ export default function Form() {
   const { handleChange, values, handleSubmit, errors } = useCustomForm(validateInfo)
   return (
     <>
-      <FormCreateEmployee onSubmit={handleSubmit}>
+      <FormCreateEmployee onSubmit={handleSubmit} >
         <Formfieldset>
           <FormLegend>Information</FormLegend>
-
           <FormWrapperInfo>
             <FormWrapperInput>
-              <FormLabel  htmlFor="firstname">Firstname</FormLabel >
+              <FormLabel htmlFor="firstName">Firstname</FormLabel >
               <FormInput type="text" id="firstName" name="firstName" placeholder='entry firstName' value={values.firstName} onChange={handleChange} />
               {errors.firstName && <FormMessageError>{errors.firstName}</FormMessageError>}
             </FormWrapperInput>
             <FormWrapperInput>
-              <FormLabel  htmlFor="lastName">Lastname</FormLabel >
+              <FormLabel htmlFor="lastName">Lastname</FormLabel >
               <FormInput type="text" id="lastName" name="lastName" placeholder='entry lastName' value={values.lastName} onChange={handleChange} />
               {errors.lastName && <FormMessageError>{errors.lastName}</FormMessageError>}
             </FormWrapperInput>
             <FormWrapperInput>
-              <FormLabel  htmlFor="dateOfBirth">Birthday date</FormLabel >
+              <FormLabel htmlFor="dateOfBirth">Birthday date</FormLabel >
               <FormInput type="date" id="dateOfBirth" name="dateOfBirth" value={values.dateOfBirth} onChange={handleChange} />
               {errors.dateOfBirth && <FormMessageError>{errors.dateOfBirth}</FormMessageError>}
             </FormWrapperInput>

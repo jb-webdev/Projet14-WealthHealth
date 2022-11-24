@@ -19,6 +19,7 @@ export const FormWrapperInfo = styled.div`
     justify-content: flex-start;
     flex-wrap: wrap;
 `
+
 export const FormWrapperInput = styled.div`
     margin-right: 30px;
     margin-bottom: 15px;

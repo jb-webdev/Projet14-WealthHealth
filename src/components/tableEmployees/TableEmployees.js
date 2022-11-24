@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react'
-import './tableEmployees.css'
+import {WrapperFilter,SelectPages,Table,Tr,Th,Td,WrapperPaginateBottom,BtnGoToEnd,BtnGoToStart,BtnPreviousPage, BtnNextPage, WrapperSpanPaginate,TextPaginate} from './tableEmployeesStyles.js'
 import { useSelector } from 'react-redux'
 
 import { useTable, useGlobalFilter, usePagination } from 'react-table'
@@ -7,17 +7,14 @@ import { COLUMNS } from './utilsTable/columns.js'
 import { GlobalFilter } from './utilsTable/GlobalFilter.js'
 
 
+
+
 export default function TableEmployees() {
-    // on import la liste des employees du store => ok
-    // mettre en place le filtre du tableau
-    // mettre en place la pagination
-    // === TODO ======
-    // bug format enregistrement date
 
     const employeesListStore = useSelector((state) => state.StoreState.employeesList)
 
     const columns = useMemo(() => COLUMNS, [])
-    const data = useMemo(() => employeesListStore, [])
+    const data = useMemo(() => employeesListStore, [employeesListStore])
 
 
     const {
@@ -51,8 +48,8 @@ export default function TableEmployees() {
 
     return (
         <>
-            <div className='wrapper-research-options'>
-                <select className='selectNbrPage' value={pageSize} onChange={e => setPageSize(Number(e.target.value))}>
+            <WrapperFilter>
+                <SelectPages value={pageSize} onChange={e => setPageSize(Number(e.target.value))}>
                     {
                         [10, 25, 50, 100].map(pageSize => (
                             <option key={pageSize} value={pageSize}>
@@ -60,55 +57,47 @@ export default function TableEmployees() {
                             </option>
                         ))
                     }
-                </select>
-
+                </SelectPages>
                 <GlobalFilter filter={globalFilter} setFilter={setGlobalFilter} />
-            </div>
-            <table {...getTableProps()}>
+            </WrapperFilter>
+            <Table {...getTableProps()}>
                 <thead >
                     {headerGroups.map((headerGroup) => (
-                        <tr {...headerGroup.getFooterGroupProps()}>
+                        <Tr {...headerGroup.getFooterGroupProps()}>
                             {headerGroup.headers.map((column) => (
-                                <th {...column.getHeaderProps()}>{column.render('Header')}</th>
+                                <Th {...column.getHeaderProps()}>{column.render('Header')}</Th>
                             ))}
-                        </tr>
+                        </Tr>
 
                     ))}
 
                 </thead>
                 <tbody {...getTableBodyProps()}>
 
-                {page.map((row) => {
-                    prepareRow(row)
-
-                    return (
-                        <tr {...row.getRowProps()}>
-                            {row.cells.map((cell) => {
-                                return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
-                            })}
-                        </tr>
-                    )
-                })}
-            </tbody>
+                    {page.map((row) => {
+                        prepareRow(row)
+                        return (
+                            <Tr {...row.getRowProps()}>
+                                {row.cells.map((cell) => {
+                                    return <Td {...cell.getCellProps()}>{cell.render('Cell')}</Td>
+                                })}
+                            </Tr>
+                        )
+                    })}
+                </tbody>
                 
 
-            </table>
-            <div className='wrapperPaginateBottom'>
-                <button className='btn-nextFullPage' onClick={() => gotoPage(0)} disabled={!canPreviousPage} >{'<<'}</button>
-                <button
-                    className='btn-previoustPage'
-                    onClick={() => previousPage()}
-                    disabled={!canPreviousPage}
-                >
-                    Previous
-                </button>
-                <div className='wrapperSpanPaginate'>
-                    <p>
+            </Table>
+            <WrapperPaginateBottom>
+                <BtnGoToEnd  onClick={() => gotoPage(0)} disabled={!canPreviousPage} >{'<<'}</BtnGoToEnd>
+                <BtnPreviousPage onClick={() => previousPage()} disabled={!canPreviousPage} >Previous</BtnPreviousPage>
+                <WrapperSpanPaginate>
+                    <TextPaginate>
                         Page 
                         <strong>
                             {pageIndex + 1} of {pageOptions.length}
                         </strong> 
-                    </p>
+                    </TextPaginate>
                     
                     <span>
                         <label> Go to page: </label> 
@@ -123,16 +112,10 @@ export default function TableEmployees() {
                         />
                     </span>
 
-                </div>
-                <button
-                    className='btn-nextPage'
-                    onClick={() => nextPage()}
-                    disabled={!canNextPage}
-                >
-                    Next
-                </button>
-                <button className='btn-PreviousFullPage ' onClick={() => gotoPage(pageCount -1)} disabled={!canNextPage} >{'>>'}</button>
-            </div>
+                </WrapperSpanPaginate>
+                <BtnNextPage onClick={() => nextPage()} disabled={!canNextPage} >Next</BtnNextPage>
+                <BtnGoToStart  onClick={() => gotoPage(pageCount -1)} disabled={!canNextPage} >{'>>'}</BtnGoToStart>
+            </WrapperPaginateBottom>
         </>
     )
 }

@@ -24,14 +24,14 @@ const useCustomForm = () => {
         state: '',
         zipCode: '',
     })
+    
     const [errors, setErrors] = useState({})
-
+    
     const handleChange = e => {
         const { name, value } = e.target
         setValues({
             ...values,
             [name]: value
-            
         })
         dispatch(SubmitFormulaire(true))
     }
@@ -44,7 +44,7 @@ const useCustomForm = () => {
     function addWorker() {
         let newPersonnal = [...workersList]
         newPersonnal.push(values)
-        console.log(newPersonnal)
+        //console.log(newPersonnal)
         dispatch(AddEmployee(newPersonnal))
         dispatch(DisplayModal())
     }
@@ -58,7 +58,6 @@ const useCustomForm = () => {
         [errors]
     )
     return { handleChange, values, handleSubmit, errors }
-
 }
 
 export default useCustomForm
