@@ -1,11 +1,11 @@
 import React, { useMemo } from 'react'
-import {WrapperFilter,SelectPages,Table,Tr,Th,Td,WrapperPaginateBottom,BtnGoToEnd,BtnGoToStart,BtnPreviousPage, BtnNextPage, WrapperSpanPaginate,TextPaginate} from './tableEmployeesStyles.js'
+import { WrapperFilter, SelectPages, Table, Tr, Th, Td, WrapperPaginateBottom, BtnGoToEnd, BtnGoToStart, BtnPreviousPage, BtnNextPage, WrapperSpanPaginate, TextPaginate } from './tableEmployeesStyles.js'
+import { RiArrowUpSFill, RiArrowDownSFill  } from 'react-icons/ri'
 import { useSelector } from 'react-redux'
 
-import { useTable, useGlobalFilter, usePagination } from 'react-table'
+import { useTable, useGlobalFilter, usePagination, useSortBy } from 'react-table'
 import { COLUMNS } from './utilsTable/columns.js'
 import { GlobalFilter } from './utilsTable/GlobalFilter.js'
-
 
 
 
@@ -16,7 +16,6 @@ export default function TableEmployees() {
     const columns = useMemo(() => COLUMNS, [])
     const data = useMemo(() => employeesListStore, [employeesListStore])
 
-
     const {
         getTableProps,
         getTableBodyProps,
@@ -24,10 +23,10 @@ export default function TableEmployees() {
         page,
         nextPage,
         previousPage,
-        canNextPage, 
+        canNextPage,
         canPreviousPage,
         pageOptions,
-        gotoPage, 
+        gotoPage,
         pageCount,
         setPageSize,
         state,
@@ -37,9 +36,10 @@ export default function TableEmployees() {
         {
             columns,
             data,
-            initialState: { pageIndex : 0 }
-        }, 
-        useGlobalFilter, 
+            initialState: { pageIndex: 0 }
+        },
+        useGlobalFilter,
+        useSortBy,
         usePagination
     )
 
@@ -65,10 +65,13 @@ export default function TableEmployees() {
                     {headerGroups.map((headerGroup) => (
                         <Tr {...headerGroup.getFooterGroupProps()}>
                             {headerGroup.headers.map((column) => (
-                                <Th {...column.getHeaderProps()}>{column.render('Header')}</Th>
+                                <Th {...column.getHeaderProps(column.getSortByToggleProps())}>{column.render('Header')}
+                                    <span>
+                                        {column.isSorted ? (column.isSortedDesc ? <RiArrowDownSFill /> : <RiArrowUpSFill />) : ''}
+                                    </span>
+                                </Th>
                             ))}
                         </Tr>
-
                     ))}
 
                 </thead>
@@ -85,22 +88,22 @@ export default function TableEmployees() {
                         )
                     })}
                 </tbody>
-                
+
 
             </Table>
             <WrapperPaginateBottom>
-                <BtnGoToEnd  onClick={() => gotoPage(0)} disabled={!canPreviousPage} >{'<<'}</BtnGoToEnd>
+                <BtnGoToEnd onClick={() => gotoPage(0)} disabled={!canPreviousPage} >{'<<'}</BtnGoToEnd>
                 <BtnPreviousPage onClick={() => previousPage()} disabled={!canPreviousPage} >Previous</BtnPreviousPage>
                 <WrapperSpanPaginate>
                     <TextPaginate>
-                        Page 
+                        Page
                         <strong>
                             {pageIndex + 1} of {pageOptions.length}
-                        </strong> 
+                        </strong>
                     </TextPaginate>
-                    
+
                     <span>
-                        <label> Go to page: </label> 
+                        <label> Go to page: </label>
                         <input
                             type='number'
                             defaultValue={pageIndex + 1}
@@ -108,15 +111,14 @@ export default function TableEmployees() {
                                 const pageNumber = e.target.value ? Number(e.target.value) - 1 : 0
                                 gotoPage(pageNumber)
                             }}
-                            style={{ width: '50px'}}
+                            style={{ width: '50px' }}
                         />
                     </span>
 
                 </WrapperSpanPaginate>
                 <BtnNextPage onClick={() => nextPage()} disabled={!canNextPage} >Next</BtnNextPage>
-                <BtnGoToStart  onClick={() => gotoPage(pageCount -1)} disabled={!canNextPage} >{'>>'}</BtnGoToStart>
+                <BtnGoToStart onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage} >{'>>'}</BtnGoToStart>
             </WrapperPaginateBottom>
         </>
     )
 }
-
