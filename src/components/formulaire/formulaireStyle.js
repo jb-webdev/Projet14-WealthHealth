@@ -1,14 +1,11 @@
 import styled from 'styled-components'
 import { colorOne, colorTwo } from '../../GlobalStyle'
-
 export const FormCreateEmployee = styled.form`
-
 `
 export const Formfieldset = styled.fieldset`
     border: 2px solid ${colorOne};
     margin-bottom: 20px;
 `
-
 export const FormLegend = styled.legend`
     color: ${colorOne};
     font-weight: bold;
@@ -19,7 +16,6 @@ export const FormWrapperInfo = styled.div`
     justify-content: flex-start;
     flex-wrap: wrap;
 `
-
 export const FormWrapperInput = styled.div`
     margin-right: 30px;
     margin-bottom: 15px;
@@ -38,7 +34,6 @@ export const FormSelect = styled.select`
     border: 2px solid ${colorOne};
     border-radius: 5px;
 `
-
 // WRAPPER BUTTON && BUTTON SUBMIT
 export const FormWrapperButton = styled.div`
     width: 100%;
@@ -46,7 +41,6 @@ export const FormWrapperButton = styled.div`
     justify-content: center;
     margin-top: 20px;
 `
-
 export const FormButton = styled.button`
     color: #FFF;
     display: inline-block;
@@ -59,15 +53,14 @@ export const FormButton = styled.button`
     text-transform: uppercase;
     margin-right: 40px;
     cursor: pointer;
-    border: 2px solid ${colorOne};
+    border: 2px solid ${colorTwo};
     border-radius: 5px;
-    background-color: ${colorTwo};
+    background-color: ${colorOne};
     &:hover {
-        background-color: ${colorOne};
+        background-color: ${colorTwo};
     }
 
 `
-
 // TEXT INPUT ERROR
 export const FormMessageError = styled.p`
     color: red;

@@ -12,7 +12,7 @@ var btnStyleOne = `
     padding-left: 20px;
     padding-right: 20px;
     &:disabled {
-        color: ${colorTwo}
+        color: #000000;
     }
   `
 var btnStyleTwo = `
@@ -25,7 +25,7 @@ var btnStyleTwo = `
     height: 50px;
     width: 90px;
     &:disabled {
-        color: ${colorTwo}
+        color: #000000;
     }
   `
 // ===== Filter TOP Style =====

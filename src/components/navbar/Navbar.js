@@ -7,7 +7,7 @@ export default function Navbar() {
   return (
     <Header >
       <LinkStyled to='/'>
-        <HeaderLogo src={Logo} alt="Logo hrnet" />
+        <HeaderLogo src={Logo} width="50px" height="48px" alt="Logo hrnet" />
         <HeaderText >HRnet</HeaderText>
       </LinkStyled>
       <WrapperNavLink>

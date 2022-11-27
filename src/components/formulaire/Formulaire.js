@@ -32,7 +32,6 @@ export default function Form() {
               {errors.dateOfBirth && <FormMessageError>{errors.dateOfBirth}</FormMessageError>}
             </FormWrapperInput>
           </FormWrapperInfo>
-
           <FormWrapperInfo>
             <FormWrapperInput>
               <FormLabel htmlFor="entryDate">Entry date</FormLabel >
@@ -55,7 +54,6 @@ export default function Form() {
         </Formfieldset>
         <Formfieldset>
           <FormLegend>Adress</FormLegend>
-
           <FormWrapperInfo>
             <FormWrapperInput>
               <FormLabel htmlFor="street">Street</FormLabel >
@@ -86,11 +84,9 @@ export default function Form() {
             </FormWrapperInput>
           </FormWrapperInfo>
         </Formfieldset>
-
         <FormWrapperButton>
           <FormButton type='submit'>create employe</FormButton>
         </FormWrapperButton>
-
       </FormCreateEmployee>
     </>
   )
