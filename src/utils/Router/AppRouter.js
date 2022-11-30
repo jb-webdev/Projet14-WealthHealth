@@ -9,9 +9,9 @@ export default function AppRouter() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<CreateEmployee />} />
-        <Route path="/employees" element={<EmployeesList />} />
-        <Route path="/*" element={<Error />} />
+        <Route path="Projet14-WealthHealth/" element={<CreateEmployee />} />
+        <Route path="Projet14-WealthHealth/employees" element={<EmployeesList />} />
+        <Route path="Projet14-WealthHealth/*" element={<Error />} />
       </Routes>
     </>
   )

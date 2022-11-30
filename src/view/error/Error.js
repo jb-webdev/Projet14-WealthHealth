@@ -6,7 +6,7 @@ export default function Error() {
   const navigate = useNavigate()
 
   setTimeout(() => {
-    navigate(`/`)
+    navigate(`Projet14-WealthHealth/`)
   }, 2000)
 
   return (
