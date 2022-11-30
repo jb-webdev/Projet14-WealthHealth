@@ -1,6 +1,7 @@
 {
   "name": "projet14-wealth-health",
   "version": "0.1.0",
+  "homepage": "https://jb-webdev.github.io/Projet14-WealthHealth",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.6",
@@ -8,6 +9,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "date-fns": "^2.29.3",
+    "gh-pages": "^4.0.0",
     "immer": "^9.0.16",
     "modal-custom-jb": "^1.0.5",
     "react": "^18.2.0",
@@ -25,7 +27,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
