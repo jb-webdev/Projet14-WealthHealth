@@ -1,5 +1,4 @@
 {
-  "homepage": "https://jb-webdev.github.io/Projet14-WealthHealth",
   "name": "projet14-wealth-health",
   "version": "0.1.0",
   "private": true,
@@ -9,7 +8,6 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "date-fns": "^2.29.3",
-    "gh-pages": "^4.0.0",
     "immer": "^9.0.16",
     "modal-custom-jb": "^1.0.5",
     "react": "^18.2.0",
@@ -24,8 +22,6 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

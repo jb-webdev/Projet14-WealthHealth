@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import { colorTwo } from "../../GlobalStyle";
+import { colorOne, colorTwo } from "../../GlobalStyle";
 
 
 var btnStyleOne = ` 
-    background-color: ${colorTwo};
+    background-color: ${colorOne};
     color: #ffffff;
     border: none;
     border-radius: 5px;
@@ -14,17 +14,25 @@ var btnStyleOne = `
     &:disabled {
         color: #000000;
     }
+    &:hover {
+        background-color: ${colorTwo};
+        color: #000000;
+    }
   `
 var btnStyleTwo = `
     border: none;
     border-radius: 5px;
-    background-color: ${colorTwo};
+    background-color: ${colorOne};
     color: #ffffff;
     padding: 10px;
     cursor: pointer;
     height: 50px;
     width: 90px;
     &:disabled {
+        color: #000000;
+    }
+    &:hover {
+        background-color: ${colorTwo};
         color: #000000;
     }
   `
@@ -37,7 +45,7 @@ export const WrapperFilter = styled.div`
     margin-bottom: 20px;
 `
 export const SelectPages = styled.select`
-    background-color: ${colorTwo};
+    background-color: ${colorOne};
     border: none;
     padding: 10px;
     color: #ffffff;
@@ -64,7 +72,7 @@ export const Th = styled.th`
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: center;
-    background-color: ${colorTwo};
+    background-color: ${colorOne};
     color: white;
 `
 export const Td = styled.td`
@@ -108,7 +116,7 @@ export const WrapperSpanPaginate = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    background-color: ${colorTwo};
+    background-color: ${colorOne};
     
     padding-left: 30px;
     padding-right: 30px;

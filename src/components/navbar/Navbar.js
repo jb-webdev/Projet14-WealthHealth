@@ -6,13 +6,13 @@ export default function Navbar() {
 
   return (
     <Header >
-      <LinkStyled to='Projet14-WealthHealth/'>
+      <LinkStyled to='/'>
         <HeaderLogo src={Logo} width="50px" height="48px" alt="Logo hrnet" />
         <HeaderText >HRnet</HeaderText>
       </LinkStyled>
       <WrapperNavLink>
-        <NavLinkStyled to='Projet14-WealthHealth/'>New employee</NavLinkStyled>
-        <NavLinkStyled to='Projet14-WealthHealth/employees' >Employee list</NavLinkStyled>
+        <NavLinkStyled to='/'>New employee</NavLinkStyled>
+        <NavLinkStyled to='/employees' >Employee list</NavLinkStyled>
       </WrapperNavLink>
     </Header>
   )
