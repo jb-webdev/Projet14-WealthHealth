@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/Projet14-WealthHealth/static/css/main.754ebb54.css",
-    "main.js": "/Projet14-WealthHealth/static/js/main.5080d4de.js",
+    "main.js": "/Projet14-WealthHealth/static/js/main.1a6fe6f0.js",
     "static/media/logo-v2.png": "/Projet14-WealthHealth/static/media/logo-v2.2121ab0b2e8fc7f101fb.png",
     "index.html": "/Projet14-WealthHealth/index.html",
     "main.754ebb54.css.map": "/Projet14-WealthHealth/static/css/main.754ebb54.css.map",
-    "main.5080d4de.js.map": "/Projet14-WealthHealth/static/js/main.5080d4de.js.map"
+    "main.1a6fe6f0.js.map": "/Projet14-WealthHealth/static/js/main.1a6fe6f0.js.map"
   },
   "entrypoints": [
     "static/css/main.754ebb54.css",
-    "static/js/main.5080d4de.js"
+    "static/js/main.1a6fe6f0.js"
   ]
 }
