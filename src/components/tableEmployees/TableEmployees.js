@@ -98,8 +98,10 @@ export default function TableEmployees() {
                         </SpanTextPaginate>
                     </TextPaginate>
                     <span>
-                        <LabelPaginate> Go to page: </LabelPaginate>
+                        <LabelPaginate htmlFor='paginateSelection'> Go to page: </LabelPaginate>
                         <InputPaginate
+                            id="paginateSelection"
+                            name='paginateSelection'
                             type='number'
                             defaultValue={pageIndex + 1}
                             onChange={e => {
