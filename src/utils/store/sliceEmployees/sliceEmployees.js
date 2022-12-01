@@ -2,13 +2,14 @@ import { createSlice } from "@reduxjs/toolkit"
 
 export const sliceEmployees = createSlice({
     name: "sliceEmployees",
+    // etat de initial de non states dans l'application
     initialState:
     {
         employeesList: [],
         modalForm: false,
         isSubmitForm: false,
     },
-
+    // reducer avec les actions necessaire pour modifier non etats
     reducers: {
         AddEmployee: (state, action) => {
             state.employeesList = action.payload

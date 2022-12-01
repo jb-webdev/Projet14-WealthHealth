@@ -1,3 +1,8 @@
+/**
+ * @author jean-jacques BOERO
+ * @file Form retourne le formulaire de création d'emloyé'
+ * @returns {reactElement}
+ */
 import React from 'react'
 import { FormCreateEmployee, Formfieldset, FormLegend, FormWrapperInfo, FormWrapperInput, FormLabel, FormInput, FormSelect, FormWrapperButton, FormMessageError, FormButton, } from './formulaireStyle'
 
@@ -7,8 +12,11 @@ import useCustomForm from '../../utils/customHook/hooksForm/UseCustomForm.js'
 import validateInfo from '../../utils/customHook/hooksForm/validateInfo.js'
 
 export default function Form() {
+  // recupere les données d'emploi "type => Marketing | Sales | Engineering ..."
   const dataOptionsJob = dataSelectJodDepartment
+  // recupere les données d'états du pays' "type => Alabama | California | Colorado ..."
   const data = dataState
+  // on utilise les methodes du hooks useCustomForm()
   const { handleChange, values, handleSubmit, errors } = useCustomForm(validateInfo)
   return (
     <>

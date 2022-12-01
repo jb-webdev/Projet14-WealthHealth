@@ -1,3 +1,8 @@
+/**
+ * @author jean-jacques BOERO
+ * @file TableEmployees retourne le tableau de liste des employés
+ * @returns {reactElement}
+ */
 import React, { useMemo } from 'react'
 import { WrapperFilter, SelectPages, Table, Tr, Th, Td, WrapperPaginateBottom, ContainerBtn, BtnGoToEnd, BtnGoToStart, BtnPreviousPage, BtnNextPage, WrapperSpanPaginate, TextPaginate, SpanTextPaginate, SpanLabelPaginate, InputPaginate, LabelPaginate, ErrorResearch } from './tableEmployeesStyles.js'
 import { RiArrowUpSFill, RiArrowDownSFill } from 'react-icons/ri'
@@ -9,12 +14,13 @@ import { GlobalFilter } from './utilsTable/GlobalFilter.js'
 
 
 export default function TableEmployees() {
-
+    // on recupere les datas des employés chargé dans le store
     const employeesListStore = useSelector((state) => state.StoreState.employeesList)
-
+    // on utilise useMemo pour gerer la partie filtre du tableau
     const columns = useMemo(() => COLUMNS, [])
+    // on charge la constante avec la liste d'employés à afficher
     const data = useMemo(() => employeesListStore, [employeesListStore])
-
+    // on utilise les methodes de useTable()
     const {
         getTableProps,
         getTableBodyProps,

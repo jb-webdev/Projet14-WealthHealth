@@ -1,3 +1,7 @@
+/**
+ * @author jean-jacques BOERO
+ * @file useCustomForm hooks custom pour gerer notre formulaire
+ */
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
@@ -6,7 +10,9 @@ import validateInfo from "./validateInfo.js"
 
 const useCustomForm = () => {
     const dispatch = useDispatch()
+    // on recupere l'etat de employeesList dans le store
     const workersList = useSelector((state) => state.StoreState.employeesList)
+    // on recupere l'etat de isSubmitForm dans le store
     const isSubmitting = useSelector((state) => state.StoreState.isSubmitForm)
     const workersListLength = workersList.length
     // on gere le nouvel id pour crée notre nouvel employé

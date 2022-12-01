@@ -1,3 +1,7 @@
+/**
+ * @author jean-jacques BOERO
+ * @file AppRouter router des pages de l'application
+ */
 import React from 'react'
 import { Routes, Route } from "react-router-dom"
 import EmployeesList from '../../view/employeesList/EmployeesList.js'
