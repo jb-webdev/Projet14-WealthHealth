@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react'
-import { WrapperFilter, SelectPages, Table, Tr, Th, Td, WrapperPaginateBottom, BtnGoToEnd, BtnGoToStart, BtnPreviousPage, BtnNextPage, WrapperSpanPaginate, TextPaginate, SpanTextPaginate, InputPaginate, LabelPaginate, ErrorResearch } from './tableEmployeesStyles.js'
+import { WrapperFilter, SelectPages, Table, Tr, Th, Td, WrapperPaginateBottom, ContainerBtn, BtnGoToEnd, BtnGoToStart, BtnPreviousPage, BtnNextPage, WrapperSpanPaginate, TextPaginate, SpanTextPaginate, SpanLabelPaginate, InputPaginate, LabelPaginate, ErrorResearch } from './tableEmployeesStyles.js'
 import { RiArrowUpSFill, RiArrowDownSFill } from 'react-icons/ri'
 import { useSelector } from 'react-redux'
 
@@ -88,8 +88,10 @@ export default function TableEmployees() {
             </Table>
             {!page.length ? <ErrorResearch>Oups ! je n'ai trouvé personne !</ErrorResearch> : ""}
             <WrapperPaginateBottom>
-                <BtnGoToEnd onClick={() => gotoPage(0)} disabled={!canPreviousPage} >{'<<'}</BtnGoToEnd>
-                <BtnPreviousPage onClick={() => previousPage()} disabled={!canPreviousPage} >Previous</BtnPreviousPage>
+                <ContainerBtn>
+                    <BtnGoToEnd onClick={() => gotoPage(0)} disabled={!canPreviousPage} >{'<<'}</BtnGoToEnd>
+                    <BtnPreviousPage onClick={() => previousPage()} disabled={!canPreviousPage} >Prev</BtnPreviousPage>
+                </ContainerBtn>
                 <WrapperSpanPaginate>
                     <TextPaginate>
                         Page :
@@ -97,7 +99,7 @@ export default function TableEmployees() {
                             {pageIndex + 1} of {pageOptions.length}
                         </SpanTextPaginate>
                     </TextPaginate>
-                    <span>
+                    <SpanLabelPaginate>
                         <LabelPaginate htmlFor='paginateSelection'> Go to page: </LabelPaginate>
                         <InputPaginate
                             id="paginateSelection"
@@ -110,10 +112,12 @@ export default function TableEmployees() {
                             }}
                             style={{ width: '50px' }}
                         />
-                    </span>
+                    </SpanLabelPaginate>
                 </WrapperSpanPaginate>
-                <BtnNextPage onClick={() => nextPage()} disabled={!canNextPage} >Next</BtnNextPage>
-                <BtnGoToStart onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage} >{'>>'}</BtnGoToStart>
+                <ContainerBtn>  
+                    <BtnNextPage onClick={() => nextPage()} disabled={!canNextPage} >Next</BtnNextPage>
+                    <BtnGoToStart onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage} >{'>>'}</BtnGoToStart>
+                </ContainerBtn>
             </WrapperPaginateBottom>
         </>
     )

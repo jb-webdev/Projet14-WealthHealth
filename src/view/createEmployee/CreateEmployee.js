@@ -8,22 +8,21 @@ import { useDispatch } from 'react-redux'
 import { DisplayModal } from '../../utils/store/sliceEmployees/sliceEmployees.js'
 import { useSelector } from 'react-redux'
 
-
 export default function CreateEmployee() {
     const isOpen = useSelector((state) => state.StoreState.modalForm)
     const dispatch = useDispatch()
-    const closeModal = () => { dispatch(DisplayModal()) }
+    const dispatModal = () => dispatch(DisplayModal())
 
     return (
         <MainCreateEmployee>
             <MainCreateEmployeeTitle>Create a new Employee</MainCreateEmployeeTitle>
             <Formulaire />
             <ModalCustom
-                isOpen={isOpen}
-                closeModal={closeModal}
+                openModal={isOpen}
+                closeModal={dispatModal}
                 message="Création du nouvel employé réussi !"
-                messageColor="#000000"
-                animation="down"
+                messageColor="#93ad18"
+                animation="right"
                 border="success"
             />
         </MainCreateEmployee>

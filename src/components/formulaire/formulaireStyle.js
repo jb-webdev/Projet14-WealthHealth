@@ -19,6 +19,9 @@ export const FormWrapperInfo = styled.div`
 export const FormWrapperInput = styled.div`
     margin-right: 30px;
     margin-bottom: 15px;
+    @media (max-width: 768px) {
+        margin-right: 0;
+    }
 `
 export const FormLabel = styled.label`
     color: ${colorOne};
@@ -51,7 +54,7 @@ export const FormButton = styled.button`
     margin: 0;
     padding: 20px 18px 20px 18px;
     text-transform: uppercase;
-    margin-right: 40px;
+    
     cursor: pointer;
     border: 2px solid ${colorTwo};
     border-radius: 5px;

@@ -9,7 +9,7 @@ const useCustomForm = () => {
     const workersList = useSelector((state) => state.StoreState.employeesList)
     const isSubmitting = useSelector((state) => state.StoreState.isSubmitForm)
     const workersListLength = workersList.length
-
+    // on gere le nouvel id pour crée notre nouvel employé
     const idNewWorker = (workersListLength + 1)
 
     const [values, setValues] = useState({
@@ -26,20 +26,24 @@ const useCustomForm = () => {
     })
     
     const [errors, setErrors] = useState({})
-    
+    // function qui ajoute les majuscules
+    function strUcFirst(a){return (a+'').charAt(0).toUpperCase()+a.substr(1);}
+    // on ecoute les changement dans les inputs des formulaires
     const handleChange = e => {
         const { name, value } = e.target
         setValues({
             ...values,
-            [name]: value
+            [name]: strUcFirst(value)
         })
         dispatch(SubmitFormulaire(true))
     }
 
+    // on gere la validation du formulaire avant l"envoi
     const handleSubmit = e => {
         e.preventDefault()
         setErrors(validateInfo(values))
     }
+    // function pour ajouter le nouvel utilisateur 
     // eslint-disable-next-line react-hooks/exhaustive-deps
     function addWorker() {
         let newPersonnal = [...workersList]
@@ -48,7 +52,7 @@ const useCustomForm = () => {
         dispatch(AddEmployee(newPersonnal))
         dispatch(DisplayModal())
     }
-
+    // Ici si les conditions son validées on enregistre notre nouvel employé
     useEffect(
         () => {
             if (Object.keys(errors).length === 0 && isSubmitting) {

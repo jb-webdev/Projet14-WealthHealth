@@ -1,3 +1,4 @@
+// fonction qui permet de valide nos inputs du formulaire création employé
 export default function validateInfo(values) {
     let errors = {}
     // firstName
