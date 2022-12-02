@@ -17,10 +17,10 @@ export default function Form() {
   const dataOptionsJob = dataSelectJodDepartment
   const data = dataState
 
-  const { 
-    handleChange, 
-    values, 
-    handleSubmit, 
+  const {
+    handleChange,
+    values,
+    handleSubmit,
     errors,
     closeModal,
     openModal
@@ -32,11 +32,11 @@ export default function Form() {
         <Formfieldset>
           <FormLegend>Information</FormLegend>
           <FormWrapperInfo>
-            <FormWrapperInput>
+            < FormWrapperInput >
               <FormLabel htmlFor="firstName">Firstname</FormLabel >
               <FormInput type="text" id="firstName" name="firstName" placeholder='entry firstName' value={values.firstName} onChange={handleChange} />
               {errors.firstName && <FormMessageError>{errors.firstName}</FormMessageError>}
-            </FormWrapperInput>
+            </FormWrapperInput >
             <FormWrapperInput>
               <FormLabel htmlFor="lastName">Lastname</FormLabel >
               <FormInput type="text" id="lastName" name="lastName" placeholder='entry lastName' value={values.lastName} onChange={handleChange} />
@@ -73,7 +73,7 @@ export default function Form() {
           <FormWrapperInfo>
             <FormWrapperInput>
               <FormLabel htmlFor="street">Street</FormLabel >
-              <FormInput type="text" id="street" name="street" value={values.street} onChange={handleChange} />
+              <FormInput type="text" id="street" name="street" placeholder='entry street' value={values.street} onChange={handleChange} />
               {errors.street && <FormMessageError>{errors.street}</FormMessageError>}
             </FormWrapperInput>
             <FormWrapperInput>
