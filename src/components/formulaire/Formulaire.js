@@ -6,18 +6,26 @@
 import React from 'react'
 import { FormCreateEmployee, Formfieldset, FormLegend, FormWrapperInfo, FormWrapperInput, FormLabel, FormInput, FormSelect, FormWrapperButton, FormMessageError, FormButton, } from './formulaireStyle'
 
+import { ModalCustom } from 'modal-custom-jb'
+
 import dataSelectJodDepartment from '../../assets/data/dataJobDepartment.js'
 import dataState from '../../assets/data/dataState.js'
 import useCustomForm from '../../utils/customHook/hooksForm/UseCustomForm.js'
 import validateInfo from '../../utils/customHook/hooksForm/validateInfo.js'
 
 export default function Form() {
-  // recupere les données d'emploi "type => Marketing | Sales | Engineering ..."
   const dataOptionsJob = dataSelectJodDepartment
-  // recupere les données d'états du pays' "type => Alabama | California | Colorado ..."
   const data = dataState
-  // on utilise les methodes du hooks useCustomForm()
-  const { handleChange, values, handleSubmit, errors } = useCustomForm(validateInfo)
+
+  const { 
+    handleChange, 
+    values, 
+    handleSubmit, 
+    errors,
+    closeModal,
+    openModal
+  } = useCustomForm(validateInfo)
+
   return (
     <>
       <FormCreateEmployee onSubmit={handleSubmit} >
@@ -96,6 +104,15 @@ export default function Form() {
           <FormButton type='submit'>create employe</FormButton>
         </FormWrapperButton>
       </FormCreateEmployee>
+
+      <ModalCustom
+        openModal={openModal}
+        closeModal={closeModal}
+        message="Création du nouvel employé réussi !"
+        messageColor="#000000"
+        animation="right"
+        border="success"
+      />
     </>
   )
 }

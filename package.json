@@ -11,7 +11,7 @@
     "date-fns": "^2.29.3",
     "gh-pages": "^4.0.0",
     "immer": "^9.0.16",
-    "modal-custom-jb": "^1.0.6",
+    "modal-custom-jb": "^1.0.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.6.0",
