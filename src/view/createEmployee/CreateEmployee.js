@@ -8,7 +8,6 @@ import { MainCreateEmployee, MainCreateEmployeeTitle } from './createEmloyeeStyl
 import Formulaire from '../../components/formulaire/Formulaire.js'
 
 export default function CreateEmployee() {
-
     return (
         <MainCreateEmployee>
             <MainCreateEmployeeTitle>Create a new Employee</MainCreateEmployeeTitle>

@@ -8,7 +8,6 @@ import { Header, LinkStyled, HeaderLogo, HeaderText, WrapperNavLink, NavLinkStyl
 import Logo from '../../assets/img/logo-v2.png'
 
 export default function Navbar() {
-
   return (
     <Header >
       <LinkStyled to='/'>

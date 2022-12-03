@@ -1,3 +1,7 @@
+/**
+ * @author jean-jacques BOERO
+ * @file sliceEmployees reducers
+ */
 import { createSlice } from "@reduxjs/toolkit"
 
 export const sliceEmployees = createSlice({

@@ -1,4 +1,7 @@
-// fonction qui permet de valide nos inputs du formulaire création employé
+/**
+ * @author jean-jacques BOERO
+ * @file validateInfo logique de validation du formulaire création employé
+ */
 export default function validateInfo(values) {
     let errors = {}
     // firstName
@@ -47,6 +50,5 @@ export default function validateInfo(values) {
     } else if (values.zipCode.length < 5) {
         errors.zipCode = "Zip code needs to be 5 characters or more"
     }
-
     return errors
 }

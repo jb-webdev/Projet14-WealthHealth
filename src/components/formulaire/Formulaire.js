@@ -1,6 +1,6 @@
 /**
  * @author jean-jacques BOERO
- * @file Form retourne le formulaire de création d'emloyé'
+ * @file Form retourne le formulaire de création d'emloyé
  * @returns {reactElement}
  */
 import React from 'react'
@@ -16,7 +16,8 @@ import validateInfo from '../../utils/customHook/hooksForm/validateInfo.js'
 export default function Form() {
   const dataOptionsJob = dataSelectJodDepartment
   const data = dataState
-
+  // on utilise le cutomHook useCustomForm 
+  // et notre methde de validation de formulaire "validateInfo"
   const {
     handleChange,
     values,
@@ -104,7 +105,6 @@ export default function Form() {
           <FormButton type='submit'>create employe</FormButton>
         </FormWrapperButton>
       </FormCreateEmployee>
-
       <ModalCustom
         openModal={openModal}
         closeModal={closeModal}

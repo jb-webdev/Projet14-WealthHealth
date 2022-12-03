@@ -11,12 +11,11 @@ import { useNavigate } from "react-router-dom"
 
 
 const useCustomForm = () => {
-
     // Store
     const dispatch = useDispatch()
     const workersList = useSelector((state) => state.StoreState.employeesList)
     const workersListLength = workersList.length
-    // for new id
+    // pour créer un nouvel id lors de l'enregistrement
     const idNewWorker = (workersListLength + 1)
     const [isSubmitting, setIsSubmitting ] = useState(false)
     const [errors, setErrors] = useState({})
@@ -33,6 +32,7 @@ const useCustomForm = () => {
         state: '',
         zipCode: '',
     })
+    // ici on gere la Modal
     const [openModal, setOpenModal] = useState(false)
 
     const navigate = useNavigate()
@@ -42,9 +42,9 @@ const useCustomForm = () => {
         setIsSubmitting(false)
         navigate('/employees')
     }
-    
+    // ici on verifie qu'il y a une majuscule au début des mots
     function strUcFirst(a){return (a+'').charAt(0).toUpperCase()+a.substr(1);}
-
+    // ici on écoute l'évenement onChange des inputs
     const handleChange = e => {
         const { name, value } = e.target
         setValues({
@@ -53,10 +53,12 @@ const useCustomForm = () => {
         })
         setIsSubmitting(true)
     }
+    // ici on écoute l'évenement onSubmit du formulaire
     const handleSubmit = e => {
         e.preventDefault()
         setErrors(validateInfo(values))
     }
+    // ici prépare notre fonction pour l'enregistrement
     // eslint-disable-next-line react-hooks/exhaustive-deps
     function addWorker() {
         let newPersonnal = [...workersList]
@@ -66,6 +68,7 @@ const useCustomForm = () => {
             setOpenModal(true)
         }
     }
+    // ici on enregistre les données dans le store si les conditions sont réunis
     useEffect(
         () => {
             if (Object.keys(errors).length === 0 && isSubmitting) {

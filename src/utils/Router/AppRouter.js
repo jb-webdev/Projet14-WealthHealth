@@ -1,6 +1,6 @@
 /**
  * @author jean-jacques BOERO
- * @file AppRouter router des pages de l'application
+ * @file AppRouter router gere les routes de l'application
  */
 import React from 'react'
 import { Routes, Route } from "react-router-dom"
